@@ -1,0 +1,172 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #ff6f61;
+    animation: heartbeat 1.5s infinite;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.2);
+}
+
+/* Floating Hearts */
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp 5s ease-in-out infinite;
+    font-size: 30px;
+    color: #ff6f61;
+}
+
+.heart1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart2 {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.heart3 {
+    left: 80%;
+    animation-delay: 4s;
+}
+
+/* Fade-in Effect */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.heartbeat {
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Kiss and Hug buttons */
+.button-container {
+    margin-top: 20px;
+}
+
+.kiss-button, .hug-button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.kiss-button:hover, .hug-button:hover {
+    transform: scale(1.1);
+}
+
+/* Kiss Effect */
+.kiss-animation {
+    position: relative;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.kiss {
+    position: absolute;
+    font-size: 30px;
+    animation: floatUp 3s ease-in-out forwards;
+}
+
+/* Hug Effect */
+.hug-animation {
+    display: none;
+    font-size: 100px;
+    color: #ff6f61;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px;
+}
+
+.hug-active {
+    display: block;
+    animation: hugShake 1.5s ease-in-out;
+}
+
+@keyframes hugShake {
+    0%, 100% {
+        transform: translateX(-50%);
+    }
+    25% {
+        transform: translateX(-60%);
+    }
+    50% {
+        transform: translateX(-40%);
+    }
+    75% {
+        transform: translateX(-60%);
+    }
+}

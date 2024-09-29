@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy National Love Day</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <span class="floating-heart heart1">❤️</span>
+    <span class="floating-heart heart2">💖</span>
+    <span class="floating-heart heart3">💕</span>
+
+    <div class="container fade-in">
+        <h1 class="heartbeat">Happy National Love Day, Eaint!</h1>
+        <p>It's only been a week, but I feel like we've known each other forever. Here's a little something to show you how much you mean to me.</p>
+        
+        <div class="gallery">
+            <!-- Add your photos here -->
+            <img src="photo1.jpg" alt="Her Image">
+            <img src="photo2.jpg" alt="Another Image">
+        </div>
+
+        <div class="letter fade-in">
+            <h2>My Love Letter to You</h2>
+            <p>Hey Eaint Myat(ChitLay),</p>
+            <p>I know we've only been together for a short time, but I already feel so connected to you. Your smile, your kindness, your laugh... every little thing about you makes me so happy. Distance might separate us physically, but I feel closer to you every day. I can't wait for all the adventures that lie ahead.</p>
+            <p>Happy National Love Day, my love!</p>
+            <p>Forever yours, Luke</p>
+        </div>
+
+        <!-- Kiss and Hug buttons -->
+        <div class="button-container">
+            <button class="kiss-button" onclick="kissEffect()">💋 Kiss</button>
+            <button class="hug-button" onclick="hugEffect()">🤗 Hug</button>
+        </div>
+
+        <!-- Kiss Effect Container -->
+        <div id="kiss-animation" class="kiss-animation"></div>
+
+        <!-- Hug Effect -->
+        <div id="hug-animation" class="hug-animation">🤗</div>
+    </div>
+
+    <script>
+        // Kiss effect function
+        function kissEffect() {
+            const kissContainer = document.getElementById('kiss-animation');
+            kissContainer.innerHTML = ''; // Clear previous animations
+            for (let i = 0; i < 5; i++) {
+                const kiss = document.createElement('span');
+                kiss.classList.add('kiss');
+                kiss.innerHTML = '💋';
+                kiss.style.left = `${Math.random() * 100}%`;
+                kiss.style.animationDelay = `${i * 0.2}s`;
+                kissContainer.appendChild(kiss);
+            }
+        }
+
+        // Hug effect function
+        function hugEffect() {
+            const hug = document.getElementById('hug-animation');
+            hug.style.display = 'block';
+            hug.classList.add('hug-active'); // Add the hug animation class
+            setTimeout(() => {
+                hug.classList.remove('hug-active'); // Remove the animation after it completes
+                hug.style.display = 'none';
+            }, 1500); // Display for 1.5 seconds
+        }
+    </script>
+</body>
+</html>
